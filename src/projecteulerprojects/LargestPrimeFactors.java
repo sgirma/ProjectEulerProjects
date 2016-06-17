@@ -13,8 +13,8 @@ import java.util.Stack;
 public class LargestPrimeFactors {
 	private static List<Long> pFactors = new ArrayList<Long>();
 	private static Stack<Long> pFactorsStack = new Stack<Long>();
-    private long product = 1;
-    private long productStack = 1;
+	private long product = 1;
+	private long productStack = 1;
 	static HashSet<Long> primeFactors = new HashSet<Long>();
 	
 	public static void main(String[] args) {
@@ -30,6 +30,9 @@ public class LargestPrimeFactors {
 		System.out.println(product);
 	}
 	
+	/**
+	 * avoid using, super cheat method, also very slow
+	 **/
 	public static HashSet<Long> findLargestPrimeFactors(long n) {
 		long larger = 0;
 		
@@ -50,7 +53,7 @@ public class LargestPrimeFactors {
 	}
 	
 	/**
-	 * improve findLargestPrimeFactors
+	 * improve findLargestPrimeFactors, this will return an arraylist of values
 	 * @param n
 	 * @return
 	 */
@@ -80,7 +83,9 @@ public class LargestPrimeFactors {
 	}
 	
 	/**
-	 * improve findLargestPrimeFactors
+	 * improve findLargestPrimeFactors, this will return a stack
+	 * makes it easy just to pop/peek the last value, consider using deque
+	 * instead to improve efficiency
 	 * @param n
 	 * @return
 	 */
