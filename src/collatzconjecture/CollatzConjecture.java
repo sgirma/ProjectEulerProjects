@@ -7,7 +7,7 @@ import base.BaseMethods;
 
 /**
  * the collatz conjecture is a conjecture in mathematics also
- * known as 3x + 1. The  conjecture can be summarized as follows.
+ * known as 3x + 1 conjecture. The  conjecture can be summarized as follows.
  * Take any positive integer n. If n is even, divide it by 2 to get n / 2.
  * If n is odd, multiply it by 3 and add 1 to obtain 3n + 1. Repeat the
  * process (which has been called "Half Or Triple Plus One", or HOTPO[7])
@@ -23,6 +23,7 @@ public class CollatzConjecture extends BaseMethods{
 		if(x > 0) {
 			vals.add(x);
 			
+			//if value's 1, end before repetition starts
 			if(x == 1) {
 				//uncomment to view full list of values
 //				System.out.println(vals.size() + " : " + Arrays.toString(vals.toArray()));
