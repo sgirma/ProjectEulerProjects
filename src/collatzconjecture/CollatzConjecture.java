@@ -13,7 +13,7 @@ import base.BaseMethods;
  * process (which has been called "Half Or Triple Plus One", or HOTPO[7])
  * indefinitely. The conjecture is that no matter what number you start
  * with, you will always eventually reach 1. https://xkcd.com/710/
- * @author saigrr
+ * @author sgirma
  *
  */
 public class CollatzConjecture extends BaseMethods{
