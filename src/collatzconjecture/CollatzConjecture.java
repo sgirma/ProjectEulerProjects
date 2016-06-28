@@ -19,21 +19,24 @@ import base.BaseMethods;
 public class CollatzConjecture extends BaseMethods{
 	List<Long> vals = new ArrayList<Long>();
 	
-	public CollatzConjecture() {
-		// TODO Auto-generated constructor stub
-	}
-	
 	public List<Long> recursiveCollatz(long x) {
-		vals.add(x);
-		
-		if(x == 1) {
-			return vals;
+		if(x > 0) {
+			vals.add(x);
+			
+			if(x == 1) {
+				//uncomment to view full list of values
+//				System.out.println(vals.size() + " : " + Arrays.toString(vals.toArray()));
+				return vals;
+			}
+			
+			if(isEven(x)) {
+				recursiveCollatz(x/2);
+			} else {
+				recursiveCollatz(3 * x + 1);
+			}
 		}
-		
-		if(isEven(x)) {
-			recursiveCollatz(x/2);
-		} else {
-			recursiveCollatz(3 * x + 1);
+		else {
+			System.out.println("don't do that... you know what you did");
 		}
 		
 		return vals;

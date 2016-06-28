@@ -5,12 +5,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Stack;
 
+import base.BaseMethods;
+
 /*
  * The prime factors of 13195 are 5, 7, 13 and 29.
  * What is the largest prime factor of the number 600851475143 ?
  * 
  */
-public class LargestPrimeFactors {
+public class LargestPrimeFactors extends BaseMethods {
 	private static List<Long> pFactors = new ArrayList<Long>();
 	private static Stack<Long> pFactorsStack = new Stack<Long>();
 	private long product = 1;
@@ -113,24 +115,4 @@ public class LargestPrimeFactors {
 
 		return pFactorsStack;
 	}
-	
-	private static boolean isPrime(long value) {
-		if(value <= 1) {
-			return false;
-		} else if (value <= 3) {
-			return true;
-		} else if (value % 2 == 0 || value % 3 == 0) {
-			return false;
-		}
-		int i = 5;
-		while(i * i <= value) {
-			if(value % i == 0 || value % (i+2) == 0) {
-				return false;
-			}
-			
-			i += 6;
-		}
-		return true;
-	}
-
 }
