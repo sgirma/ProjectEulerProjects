@@ -18,6 +18,7 @@ import base.BaseMethods;
  */
 public class CollatzConjecture extends BaseMethods{
 	List<Long> vals = new ArrayList<Long>();
+	List<CaseObject> secVals = new ArrayList<CaseObject>();
 	
 	public List<Long> recursiveCollatz(long x) {
 		if(x > 0) {
@@ -42,4 +43,33 @@ public class CollatzConjecture extends BaseMethods{
 		
 		return vals;
 	}
+	
+//	public List<CaseObject> recursiveCollatzForInspection(long x) {
+//		CaseObject co = new CaseObject();
+//		
+//		if(x > 0) {
+//			co.setValue(x);
+//			co.setEven(isEven(x));
+//			co.setPrime(isPrime(x));
+//			secVals.add(co);
+//			
+//			//if value's 1, end before repetition starts
+//			if(x == 1) {
+//				//uncomment to view full list of values
+////				System.out.println(vals.size() + " : " + Arrays.toString(vals.toArray()));
+//				return secVals;
+//			}
+//			
+//			if(isEven(x)) {
+//				recursiveCollatzForInspection(x/2);
+//			} else {
+//				recursiveCollatzForInspection(3 * x + 1);
+//			}
+//		}
+//		else {
+//			System.out.println("don't do that... you know what you did");
+//		}
+//		
+//		return secVals;
+//	}
 }
