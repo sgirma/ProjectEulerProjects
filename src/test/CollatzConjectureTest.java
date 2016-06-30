@@ -97,6 +97,7 @@ public class CollatzConjectureTest extends BaseMethods {
 			cc = new CollatzConjecture();
 			vals = cc.recursiveCollatz(i);
 			
+			// TODO instead of using size greater than 100
 			if(vals.size() >= 100) {
 				co.setValue(i);
 				co.setSize(vals.size());
@@ -110,17 +111,34 @@ public class CollatzConjectureTest extends BaseMethods {
 		for(CaseObject oc : cos) {
 			System.out.println(oc.getValue() + "\t" + oc.getSize() + "\t" + oc.isEven() + "\t" + oc.isPrime());
 		}
+	}
+	
+	@Test
+	public void testRecursiveInspectionUsingRatio() {
+		CollatzConjecture cc;
+		CaseObject co;
+		cos = new ArrayList<CaseObject>();
 		
-//		CollatzConjecture cc = new CollatzConjecture();
-//		List<CaseObject> ocs = new ArrayList<CaseObject>();
-//		
-//		System.out.println("Val     Size    Even    Prime");
-//		for(int i = 1; i < 10; i++) {
-//			for(CaseObject oc : cc.recursiveCollatzForInspection(i)) {
-//				ocs.add(oc);
-////				System.out.println(oc.getValue() + "\t" + "\t" + oc.isEven() + "\t" + oc.isPrime());
+		for(int i = 1; i < 1000; i++) {
+			co = new CaseObject();
+			cc = new CollatzConjecture();
+			vals = cc.recursiveCollatz(i);
+			
+			// TODO instead of using size greater than 100
+//			if(vals.size() >= 100) {
+				co.setValue(i);
+				co.setSize(vals.size());
+				co.setRatio(i/vals.size());
+				co.setEven(isEven(i));
+				co.setPrime(isPrime(i));
+				cos.add(co);
 //			}
-//			System.out.println(i + ocs.size() + );
-//		}
+		}
+		
+		System.out.println("value\tsize\teven\tprime\tratio");
+		for(CaseObject oc : cos) {
+			System.out.println(oc.getValue() + "\t" + oc.getSize() +
+					"\t" + oc.isEven() + "\t" + oc.isPrime() + "\t" + oc.getRatio());
+		}
 	}
 }

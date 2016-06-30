@@ -24,9 +24,9 @@ public class CollatzConjecture extends BaseMethods{
 		if(x > 0) {
 			vals.add(x);
 			
-			//if value's 1, end before repetition starts
+			// if value's 1, end before repetition starts
 			if(x == 1) {
-				//uncomment to view full list of values
+				// uncomment to view full list of values
 //				System.out.println(vals.size() + " : " + Arrays.toString(vals.toArray()));
 				return vals;
 			}
