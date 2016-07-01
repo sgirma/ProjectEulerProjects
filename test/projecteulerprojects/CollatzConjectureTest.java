@@ -1,4 +1,4 @@
-package test;
+package projecteulerprojects;
 
 import static org.junit.Assert.*;
 
@@ -128,17 +128,20 @@ public class CollatzConjectureTest extends BaseMethods {
 //			if(vals.size() >= 100) {
 				co.setValue(i);
 				co.setSize(vals.size());
-				co.setRatio(i/vals.size());
+				// unnecessary to cast
+				co.setRatio((float)i/vals.size());
 				co.setEven(isEven(i));
 				co.setPrime(isPrime(i));
+				co.setPerfectSquare(isPerfectSquare(i));
+				co.setFibSequence(isFibSequence(i));
 				cos.add(co);
 //			}
 		}
 		
-		System.out.println("value\tsize\teven\tprime\tratio");
+		System.out.println("value\tsize\teven\tprime\tp sq\tfib seq\tratio");
 		for(CaseObject oc : cos) {
-			System.out.println(oc.getValue() + "\t" + oc.getSize() +
-					"\t" + oc.isEven() + "\t" + oc.isPrime() + "\t" + oc.getRatio());
+			System.out.println(oc.getValue() + "\t" + oc.getSize() + "\t" + oc.isEven() + "\t" +
+					oc.isPrime() + "\t" + oc.isPerfectSquare() + "\t" + oc.isFibSequence() + "\t" + oc.getRatio());
 		}
 	}
 }

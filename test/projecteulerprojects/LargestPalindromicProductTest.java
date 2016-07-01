@@ -1,4 +1,4 @@
-package test;
+package projecteulerprojects;
 
 import static org.junit.Assert.*;
 

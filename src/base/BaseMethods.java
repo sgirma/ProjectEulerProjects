@@ -6,6 +6,19 @@ public class BaseMethods {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public boolean isPerfectSquare(long value) {
+		return Math.sqrt(value) * Math.sqrt(value) == value;
+//		return Math.sqrt(value) == 0;
+	}
+	
+	protected boolean isFibSequence(long value) {
+		if(isPerfectSquare(5 * (value * value) + 4) || isPerfectSquare(5 * (value * value) - 4)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	protected boolean isEven(long value) {
 		return (value % 2 == 0) ? true : false;
 	}
