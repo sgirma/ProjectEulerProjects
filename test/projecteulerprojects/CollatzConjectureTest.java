@@ -123,19 +123,20 @@ public class CollatzConjectureTest extends BaseMethods {
 			co = new CaseObject();
 			cc = new CollatzConjecture();
 			vals = cc.recursiveCollatz(i);
+			float ratio = (float)i/vals.size();
 			
 			// TODO instead of using size greater than 100
-//			if(vals.size() >= 100) {
+			if(ratio <= 1) {
 				co.setValue(i);
 				co.setSize(vals.size());
 				// unnecessary to cast
-				co.setRatio((float)i/vals.size());
+				co.setRatio(ratio);
 				co.setEven(isEven(i));
 				co.setPrime(isPrime(i));
 				co.setPerfectSquare(isPerfectSquare(i));
 				co.setFibSequence(isFibSequence(i));
 				cos.add(co);
-//			}
+			}
 		}
 		
 		System.out.println("value\tsize\teven\tprime\tp sq\tfib seq\tratio");

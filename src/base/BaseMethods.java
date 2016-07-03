@@ -7,7 +7,7 @@ public class BaseMethods {
 	}
 	
 	public boolean isPerfectSquare(long value) {
-		return Math.sqrt(value) * Math.sqrt(value) == value;
+		return (Math.sqrt(value) % 1 == 0);
 //		return Math.sqrt(value) == 0;
 	}
 	
