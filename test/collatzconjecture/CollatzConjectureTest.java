@@ -1,8 +1,9 @@
-package projecteulerprojects;
+package collatzconjecture;
 
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +43,7 @@ public class CollatzConjectureTest extends BaseMethods {
 	public void testHighest() {
 		CollatzConjecture cc;
 		
-		LinkedHashMap<Integer, Integer> highestVals = new LinkedHashMap<Integer, Integer>();
+		HashMap<Integer, Integer> highestVals = new LinkedHashMap<Integer, Integer>();
 		int size = 0;
 		
 		for(int i = 1; i < 100; i++) {

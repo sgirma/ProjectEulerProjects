@@ -1,5 +1,10 @@
 package base;
 
+/**
+ * class with common methods used by other classes
+ * @author sgirma
+ *
+ */
 public class BaseMethods {
 
 	public BaseMethods() {
@@ -8,7 +13,6 @@ public class BaseMethods {
 	
 	public boolean isPerfectSquare(long value) {
 		return (Math.sqrt(value) % 1 == 0);
-//		return Math.sqrt(value) == 0;
 	}
 	
 	protected boolean isFibSequence(long value) {
